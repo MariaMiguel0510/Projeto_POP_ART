@@ -1,0 +1,407 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,600;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@900&display=swap');
+
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+}
+
+header {
+  background-color: rgba(255, 255, 255, 0.8);
+  height: 80px;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  padding-left: 10%;
+  padding-right: 10%;
+  z-index: 5;
+}
+
+/*--------------------Botão do header-------------------*/
+.elements {
+  padding-top: 1.3%;
+  position: relative;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  /* Centraliza os itens no eixo vertical */
+  justify-content: space-between;
+  /* Distribui os itens horizontalmente */
+}
+
+.burguerBotao {
+  position: relative;
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+  align-items: center;
+  width: 40px;
+  height: 40px;  
+  cursor: pointer;
+  z-index: 20;
+}
+
+.burguerBotao>div {
+  height: 5px;
+  width: 100%;
+  margin-bottom: 5px;
+  border-radius: 10px;
+  background-color: black;
+}
+
+/*-----------------------ícones redes---------------------*/
+.icones {
+  position: relative;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 13px;
+}
+
+/*-----------------------secções site---------------------*/
+.menuContainer {
+  position: absolute;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  top: -100vh;
+  transition: top 1s;
+  z-index: 15;
+}
+
+.menuContainer>img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: top 1s;
+}
+
+.menuContainer.show {
+  top: 0px;
+}
+
+.menu {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 170px;
+}
+
+.menu>a {
+  transform: translateY(-30px);
+  display: block;
+  text-align: center;
+  line-height: 53px;
+  color: #dd8d03;
+  font-size: 43px;
+  text-decoration: none;
+  font-family: 'Raleway', sans-serif;
+}
+
+.menu>a:hover {
+  color: white;
+}
+
+/*---------------------background-------------------*/
+canvas {
+  position: absolute;
+  top: 100vh;
+  /* Coloca o canvas exatamente abaixo da primeira seção */
+  width: 100%;
+  height: calc(100% - 100vh);
+  /* Ajusta a altura para preencher o resto da página */
+  z-index: -1;
+}
+
+/*---------------------botão Click Me----------------*/
+.botao1 {
+  z-index: 7;
+  position: absolute;
+  top: 17%;
+  left: 52%;
+  animation: loadingFirst 8s linear infinite;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.7s, opacity 1s;
+}
+
+.botao2 {
+  z-index: 7;
+  position: absolute;
+  top: 17%;
+  left: 47%;
+  animation: loadingSecond 8s linear infinite;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.7s, opacity 1s;
+}
+
+.botao1.aparece {
+  visibility: visible;
+  opacity: 1;
+}
+
+.botao2.aparece {
+  visibility: visible;
+  opacity: 1;
+}
+
+@keyframes loadingFirst {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes loadingSecond {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+.botao:hover {
+  cursor: pointer;
+}
+
+/*---------------------primeira Secção--------------------*/
+.firstSection {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background-color: #ffe32f;
+}
+
+.linhas {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0.3;
+}
+
+.tituloInicial {
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+  position: absolute;
+  top: 53%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 150px;
+  letter-spacing: 0.1em;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-color: white;
+  text-shadow:
+    8px 8px #ff1f8f,
+    20px 20px #000000;
+}
+
+/*---------------------segunda Secção---------------------*/
+.secondSection {
+  padding-top: 150px;
+  padding-bottom: 150px;
+}
+
+/*--------------------terceira Secção---------------------*/
+.contentImg {
+  width: 100%;
+  height: 100vh;
+  z-index: 5;
+}
+
+.contentImg>img {
+  width: 100%;
+  height: 100%;
+}
+
+/*---------------------quarta Secção----------------------*/
+.fourthSection {
+  padding-top: 150px;
+  padding-bottom: 130px;
+}
+
+/*----------------------quinta secção--------------------*/
+#fifthSection {
+  scroll-margin-top: 130px;
+}
+
+.fifthSection {
+  padding-bottom: 170px;
+}
+
+#source {
+  scroll-margin-top: 200px;
+}
+
+.source {
+  margin-top: 30px;
+  margin-left: 140px;
+  position: relative;
+  cursor: pointer;
+  width: 90px;
+  height: 25px;
+  background-color: #2fd4e9;
+  color: white;
+  font-size: 14px;
+  border-radius: 25px;
+  border: none;
+  font-weight: 600;
+}
+
+.textoEscondido {
+  top: 340px;
+  position: absolute;
+  font-size: 12px;
+  display: none;
+  width: 470px;
+  margin-left: 140px;
+}
+
+
+/*----------------------sexta secção--------------------*/
+.sixthSection {
+  position: relative;
+  height: 100vh;
+}
+
+.justificaContainer {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background-color: rgb(247, 247, 239);
+}
+
+.justificacao {
+  width: 30%;
+  position: relative;
+  transform: translate(60%, 32%);
+  margin: auto;
+  color: black;
+}
+
+.video {
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: start;
+  height: 100%;
+}
+
+/*----------------------footer--------------------*/
+footer {
+  position: relative;
+  background-color: #f52c88;
+  height: 100px;
+  width: 100%;
+}
+
+footer>div {
+  display: flex;
+  justify-content: center;
+  gap: 200px;
+}
+
+.conteudoFooter {
+  display: inline-block;
+  margin-top: 2.2%;
+}
+
+.conteudoFooter>ul {
+  margin: 0px;
+  font-weight: 400;
+  font-size: 12px;
+  list-style-type: none;
+  line-height: 20px;
+}
+
+/*animação das ondas iniciais*/
+.contentor {
+  display: flex;
+  min-height: 100vh;
+}
+
+.ondas {
+  position: relative;
+  transform: rotate(90deg);
+}
+
+.firstWave {
+  left: -200px;
+}
+
+.secondWave {
+  left: 58%;
+}
+
+.ondas span {
+  position: relative;
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  animation: onda 1.2s linear infinite;
+  animation-delay: calc(.1s* var(--i));
+}
+
+.ondas>a {
+  text-decoration: none;
+  color: black;
+}
+
+
+@keyframes onda {
+
+  0%,
+  40%,
+  100% {
+    transform: translateY(0);
+  }
+
+  20% {
+    transform: translateY(-7px);
+  }
+}
+
+
+@media(min-width: 1400px) {
+  .fourthSection {
+    transform: translateY(17px);
+  }
+
+  .sixthSection {
+    transform: translateY(16px);
+  }
+
+  .justificacao {
+    transform: translate(60%, 73%);
+  }
+
+  .video {
+    transform: translateY(-695px);
+  }
+
+  footer {
+    bottom: -16px;
+  }
+}

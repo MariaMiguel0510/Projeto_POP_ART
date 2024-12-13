@@ -1,0 +1,27 @@
+.texto {
+    position: relative;
+    text-align: left;
+    width: 600px;
+    font-size: 16px;
+    margin: auto;
+    line-height: 1.5;
+    letter-spacing: 1px;
+}
+
+.titulo {
+    font-family: 'Roboto Slab';
+    margin-bottom: 20px;
+}
+
+.comum {
+    z-index: 3;
+    position: relative;
+    background-color: white;
+    width: 70%;
+    height: 100%;
+    margin: auto;
+}
+
+p{
+    margin-top: 10px;
+}
