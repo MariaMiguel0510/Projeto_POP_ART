@@ -19,7 +19,13 @@ body {
   font-weight: 400;
 }
 
+.message {
+  display: none;
+}
+
 header {
+  display: flex;
+  align-items: center;
   background-color: rgba(255, 255, 255, 0.8);
   height: 80px;
   position: fixed;
@@ -32,10 +38,9 @@ header {
 
 /*--------------------Botão do header-------------------*/
 .elements {
-  padding-top: 1.3%;
   position: relative;
   width: 100%;
-  height: 80px;
+  height: 100%;
   display: flex;
   align-items: center;
   /* Centraliza os itens no eixo vertical */
@@ -50,21 +55,22 @@ header {
   flex-direction: column;
   align-items: center;
   width: 40px;
-  height: 40px;  
   cursor: pointer;
+  gap: 5px;
   z-index: 20;
 }
 
 .burguerBotao>div {
   height: 5px;
   width: 100%;
-  margin-bottom: 5px;
   border-radius: 10px;
   background-color: black;
 }
 
 /*-----------------------ícones redes---------------------*/
 .icones {
+  top: 3%;
+  height: 100%;
   position: relative;
   display: flex;
   justify-content: end;
@@ -129,26 +135,31 @@ canvas {
 }
 
 /*---------------------botão Click Me----------------*/
-.botao1 {
+.botoes {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  position: relative;
+  gap: 15px;
+  flex-direction: row;
+  align-items: center;
+}
+
+.botao1,
+.botao2 {
   z-index: 7;
-  position: absolute;
-  top: 17%;
-  left: 52%;
-  animation: loadingFirst 8s linear infinite;
+  position: relative;
   visibility: hidden;
   opacity: 0;
   transition: visibility 0.7s, opacity 1s;
 }
 
+.botao1 {
+  animation: loadingFirst 8s linear infinite;
+}
+
 .botao2 {
-  z-index: 7;
-  position: absolute;
-  top: 17%;
-  left: 47%;
   animation: loadingSecond 8s linear infinite;
-  visibility: hidden;
-  opacity: 0;
-  transition: visibility 0.7s, opacity 1s;
 }
 
 .botao1.aparece {
@@ -207,7 +218,7 @@ canvas {
   top: 53%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 150px;
+  font-size: 12vw;
   letter-spacing: 0.1em;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke-width: 3px;
@@ -256,7 +267,6 @@ canvas {
 
 .source {
   margin-top: 30px;
-  margin-left: 140px;
   position: relative;
   cursor: pointer;
   width: 90px;
@@ -270,38 +280,46 @@ canvas {
 }
 
 .textoEscondido {
-  top: 340px;
+  top: 67%;
   position: absolute;
   font-size: 12px;
   display: none;
   width: 470px;
-  margin-left: 140px;
 }
 
 
 /*----------------------sexta secção--------------------*/
 .sixthSection {
   position: relative;
+  width: 100%;
   height: 100vh;
+  background-color: rgb(247, 247, 239);
+  display: flex;
+  justify-content: end;
+  align-items: center;
 }
 
 .justificaContainer {
+  display: flex;
+  justify-content: center;
   position: relative;
   height: 100%;
-  width: 100%;
-  background-color: rgb(247, 247, 239);
+  width: 70%;
 }
 
 .justificacao {
-  width: 30%;
-  position: relative;
-  transform: translate(60%, 32%);
+  display: flex;
+  justify-content: center;
+  padding: 15%;
   margin: auto;
+  width: 100%;
+  position: relative;
+  font-size: 1.3vw;
   color: black;
 }
 
 .video {
-  position: absolute;
+  position: relative;
   top: 0;
   display: flex;
   justify-content: start;
@@ -351,7 +369,7 @@ footer>div {
 }
 
 .secondWave {
-  left: 58%;
+  left: 56%;
 }
 
 .ondas span {
@@ -403,5 +421,98 @@ footer>div {
 
   footer {
     bottom: -16px;
+  }
+}
+
+
+@media (min-width: 100px) and (max-width: 860px) {
+  body {
+    overflow: hidden;
+    height: 100vh;
+  }
+
+  section,
+  .burguerBotao,
+  .icones,
+  .contentImg,
+  .fifthSection,
+  .source,
+  .sixthSection,
+  footer {
+    display: none;
+  }
+
+  header {
+    height: 120px;
+  }
+
+  .botoes {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    position: relative;
+    gap: 20px;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .botao1,
+  .botao2 {
+    z-index: 7;
+    position: relative;
+    visibility: visible;
+    opacity: 1;
+    transition: none;
+  }
+
+
+  .botao1 {
+    animation: loadingFirst 8s linear infinite;
+  }
+
+  .botao2 {
+    animation: loadingSecond 8s linear infinite;
+  }
+
+  /* Garantir que o canvas ocupe toda a tela */
+  canvas {
+    display: block;
+    /* Certifique-se de que o canvas é exibido */
+    position: relative;
+    /* Fixa o canvas na tela */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    /* Altura 100% da tela */
+    z-index: 1;
+  }
+
+  .message {
+    display: flex;
+    justify-content: center;
+    /* Centralizar horizontalmente */
+    flex-direction: column;
+    align-items: center;
+    /* Centralizar verticalmente */
+    position: absolute;
+    top: 0;
+    left: 50%;
+    /* Posiciona a esquerda da .message no meio */
+    transform: translateX(-50%);
+    width: 70%;
+    height: 100%;
+    /* Garantir que ocupe a altura total da tela */
+    background-color: white;
+    z-index: 5;
+    padding-top: 10%;
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+
+  .message p {
+    width: 75%;
+    font-size: 2.5vw;
+    margin-bottom: 10px;
   }
 }

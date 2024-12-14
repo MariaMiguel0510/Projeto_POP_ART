@@ -78,7 +78,7 @@ function clickOne() {
 }
 
 // botão de mudar fundo 
-window.addEventListener('scroll', function() {
+window.addEventListener('scroll', function () {
   var botao1 = document.querySelector('.botao1');
   if (window.scrollY >= 500) {
     botao1.classList.add('aparece');
@@ -87,7 +87,7 @@ window.addEventListener('scroll', function() {
   }
 });
 
-window.addEventListener('scroll', function() {
+window.addEventListener('scroll', function () {
   var botao2 = document.querySelector('.botao2');
   if (window.scrollY >= 500) {
     botao2.classList.add('aparece');
@@ -119,9 +119,8 @@ function closeMenu() {
 //firstSection desaparece
 let video = document.querySelector('.firstSection');
 
-window.addEventListener('scroll', function() {
+window.addEventListener('scroll', function () {
   let value = 1 + window.scrollY / -800;
-  video.style.opacity = value;
+  video.style.opacity = value;
 });
-
 
