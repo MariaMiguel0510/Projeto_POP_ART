@@ -61,7 +61,9 @@ function carrega2() {
 }
 
 function windowResized() {
-  resizeCanvas(windowWidth, windowHeight);
+  let largura = document.body.clientWidth;
+  let altura = windowHeight; // Altura total da janela para o canvas
+  resizeCanvas(largura, altura);
 }
 
 //para se ter acesso às referência do texto

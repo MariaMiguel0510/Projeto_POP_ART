@@ -125,12 +125,11 @@ header {
 
 /*---------------------background-------------------*/
 canvas {
+  display: block;
   position: absolute;
   top: 100vh;
-  /* Coloca o canvas exatamente abaixo da primeira seção */
   width: 100%;
   height: calc(100% - 100vh);
-  /* Ajusta a altura para preencher o resto da página */
   z-index: -1;
 }
 
@@ -427,13 +426,13 @@ footer>div {
 
 @media (min-width: 100px) and (max-width: 860px) {
   body {
-    overflow: hidden;
     height: 100vh;
   }
 
   section,
   .burguerBotao,
   .icones,
+  .menuContainer,
   .contentImg,
   .fifthSection,
   .source,
@@ -474,12 +473,9 @@ footer>div {
     animation: loadingSecond 8s linear infinite;
   }
 
-  /* Garantir que o canvas ocupe toda a tela */
   canvas {
     display: block;
-    /* Certifique-se de que o canvas é exibido */
-    position: relative;
-    /* Fixa o canvas na tela */
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -511,8 +507,8 @@ footer>div {
   }
 
   .message p {
-    width: 75%;
-    font-size: 2.5vw;
+    width: 80%;
+    font-size: 3.5vw;
     margin-bottom: 10px;
   }
 }
