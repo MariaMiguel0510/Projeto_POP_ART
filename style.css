@@ -487,18 +487,14 @@ footer>div {
   .message {
     display: flex;
     justify-content: center;
-    /* Centralizar horizontalmente */
     flex-direction: column;
     align-items: center;
-    /* Centralizar verticalmente */
     position: absolute;
     top: 0;
     left: 50%;
-    /* Posiciona a esquerda da .message no meio */
     transform: translateX(-50%);
     width: 70%;
     height: 100%;
-    /* Garantir que ocupe a altura total da tela */
     background-color: white;
     z-index: 5;
     padding-top: 10%;
